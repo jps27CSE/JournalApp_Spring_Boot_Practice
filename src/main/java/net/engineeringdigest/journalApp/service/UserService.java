@@ -12,12 +12,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+
 @Component
 public class UserService {
     @Autowired
     private UserRepository userRepository;
 
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
 
     public void saveNewUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
